@@ -1,0 +1,20 @@
+
+
+Answer generation prompt without premises : 
+
+def role_1(abstract, question):
+    messages_2 = [
+        {"role": "system", "content": "You are a logical reasoning solver. Use the provided abstract as context to understand the scenario and relationships. Based on this information, solve the given question."},
+        {"role": "user", "content": f"Abstract: {abstract}\n\nQuestion: {question}"}
+    ]
+    return messages_2
+
+
+Answer generation prompt with premises : 
+
+def role_1(abstract , question):
+  messages_2 = [
+      {"role": "system", "content": "The following abstract has been created from the premises provided. Use this abstract as a reference to validate the relationships between the premises and ensure they are logically consistent with the abstract. After validation, solve the problem statement based on this analysis."},
+       {"role": "user", "content": f"Abstract : {abstract} and problem statement : {question}"},
+  ]
+   return messages_2
